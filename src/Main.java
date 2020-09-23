@@ -3,9 +3,7 @@ public class Main {
         CreditPaymentService service = new CreditPaymentService();
 
 
-        float monthlyPayment = service.calculate(1_000_000, 12);
+        double monthlyPayment = service.calculate(1_000_000, 12);
         System.out.println(monthlyPayment);
-
-
     }
 }
