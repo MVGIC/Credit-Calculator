@@ -1,8 +1,11 @@
 public class CreditPaymentService {
     public double calculate(double amount, double period) {
 
-        double percent = 9_99 / 12;
-        double monthlyPayment = amount * (percent / 1 - (Math.pow(1 + percent, (-12))));
+        double monthlyPercent = 9.99 / 12 / 100;
+
+        double annuityCoefficient = (monthlyPercent * (Math.pow((1 + monthlyPercent), (period))) / ((Math.pow((1 + monthlyPercent), (period))) - 1));
+
+        double monthlyPayment = amount * annuityCoefficient;
 
         return monthlyPayment;
     }
